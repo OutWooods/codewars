@@ -4,7 +4,7 @@ def removNb(n)
   sum = (1..n).inject(0, &:+)
 
   lower_limit = sum / n   #I think this is the lowest number that will work
-  mid_way = (lower_limit + n) / 2   #This is midway between the lowest and the top number
+  mid_way = Math.root(n)   #This is midway between the lowest and the top number
 
   (lower_limit..mid_way+1).each do |numA|
     n.downto(mid_way-1) do |numB|
