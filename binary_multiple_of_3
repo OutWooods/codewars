@@ -1,0 +1,9 @@
+divisible_by_3?(divisor)
+if divisor < 1000
+   return true  if divisor % 3
+   return false
+else
+new_divisor = divisor.to_s.split("").map(:to_i).reduce("")
+end
+divisible_by_3?(new_divisor)
+end
