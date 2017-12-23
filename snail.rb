@@ -1,24 +1,18 @@
   @snail = []
 
-def horizontal(array)
-   @snail << array.delete_at(0)
-   @snail.flatten!
-   array
+def horizontal_snail(array, position)
+	 position == "left" ? array[0] : position == "right"
 end
 
-def vertical(array, position)
-   direction = {"down" => -1, "up" => 0}
-   trail = []
-   array.each{|line| trail << line.slice!(direction[position], 1)}
-   @snail += position == "up" ?  trail.reverse! : trail
-   @snail.flatten!
-   array
+def vertical_snail(array, position)
+    snail = []
+   	direction = position == "down" ? -1 : 0
+    array.each {|line| snail << line[direction]}
+    direction == -1 ? snail.reverse : snail
 end
-
 
 
 =begin
-
 def snail(array)
 
   until snail.nil?
@@ -27,4 +21,4 @@ def snail(array)
   horizontal()
 end
 
-=end
+end
